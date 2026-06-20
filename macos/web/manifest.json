@@ -1,0 +1,18 @@
+{
+    "name": "tech_inventory",
+    "short_name": "tech_inventory",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#673AB7",
+    "theme_color": "#673AB7",
+    "description": "TechInventory Management App",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        }
+    ]
+}
