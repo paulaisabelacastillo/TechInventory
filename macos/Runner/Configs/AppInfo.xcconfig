@@ -1,0 +1,3 @@
+PRODUCT_NAME = tech_inventory
+PRODUCT_BUNDLE_IDENTIFIER = com.example.techInventory
+PRODUCT_COPYRIGHT = Copyright © 2026 com.example. All rights reserved.
