@@ -1,0 +1,16 @@
+version:
+  version: 1
+  channel: stable
+
+project_type: app
+
+migration:
+  platforms:
+    - android
+    - ios
+    - linux
+    - macos
+    - web
+    - windows
+  packages:
+    - flutter
