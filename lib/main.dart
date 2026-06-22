@@ -1,21 +1,15 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+
 import 'providers/book_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    sqfliteFfiInit();
-    databaseFactory = databaseFactoryFfi;
-  }
-
   runApp(
     ChangeNotifierProvider(
-      create: (context) => BookProvider()..loadEquipos(),
+      create: (context) => EquipoProvider()..loadEquipos(),
       child: const TechInventoryApp(),
     ),
   );
@@ -30,7 +24,7 @@ class TechInventoryApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TechInventory',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
       home: const HomeScreen(),

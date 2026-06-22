@@ -1,12 +1,5 @@
 class Equipo {
-  final int? id;
-  final String codigo;
-  final String nombre;
-  final String descripcion;
-  final String fecha;
-  final String foto;
-
-  Equipo({
+  const Equipo({
     this.id,
     required this.codigo,
     required this.nombre,
@@ -14,6 +7,13 @@ class Equipo {
     required this.fecha,
     required this.foto,
   });
+
+  final int? id;
+  final String codigo;
+  final String nombre;
+  final String descripcion;
+  final String fecha;
+  final String foto;
 
   Map<String, dynamic> toMap() {
     return {
@@ -28,12 +28,12 @@ class Equipo {
 
   factory Equipo.fromMap(Map<String, dynamic> map) {
     return Equipo(
-      id: map['id'],
-      codigo: map['codigo'],
-      nombre: map['nombre'],
-      descripcion: map['descripcion'],
-      fecha: map['fecha'],
-      foto: map['foto'],
+      id: map['id'] as int?,
+      codigo: map['codigo'] as String,
+      nombre: map['nombre'] as String,
+      descripcion: map['descripcion'] as String,
+      fecha: map['fecha'] as String,
+      foto: map['foto'] as String,
     );
   }
 }

@@ -1,7 +1,14 @@
+//
+//  Generated file. Do not edit.
+//
+
 import FlutterMacOS
 import Foundation
 
-public class GeneratedPluginRegistrant {
-  public static void register(with registry: FlPluginRegistry) {
-  }
+import file_selector_macos
+import sqflite
+
+func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
+  FileSelectorPlugin.register(with: registry.registrar(forPlugin: "FileSelectorPlugin"))
+  SqflitePlugin.register(with: registry.registrar(forPlugin: "SqflitePlugin"))
 }

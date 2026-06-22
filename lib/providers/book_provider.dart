@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
-import '../services/db_service.dart';
+
 import '../models/book.dart';
+import '../services/db_service.dart';
 
-class BookProvider with ChangeNotifier {
-  List<Equipo> _equipos = [];
+class EquipoProvider with ChangeNotifier {
   final DbService _dbService = DbService();
+  List<Equipo> _equipos = [];
 
-  List<Equipo> get equipos => _equipos;
+  List<Equipo> get equipos => List.unmodifiable(_equipos);
 
   Future<void> loadEquipos() async {
     _equipos = await _dbService.getEquipos();
     notifyListeners();
   }
 
-  Future<void> addEquipo(String codigo, String nombre, String descripcion, String fecha, String foto) async {
+  Future<void> addEquipo({
+    required String codigo,
+    required String nombre,
+    required String descripcion,
+    required String fecha,
+    required String foto,
+  }) async {
     final nuevoEquipo = Equipo(
       codigo: codigo,
       nombre: nombre,
@@ -21,6 +28,7 @@ class BookProvider with ChangeNotifier {
       fecha: fecha,
       foto: foto,
     );
+
     await _dbService.insertEquipo(nuevoEquipo);
     await loadEquipos();
   }
